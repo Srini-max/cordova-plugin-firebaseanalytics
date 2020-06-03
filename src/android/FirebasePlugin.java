@@ -172,9 +172,9 @@ public class FirebasePlugin extends CordovaPlugin {
     } else if (action.equals("startTrace")) {
       this.startTrace(callbackContext, args.getString(0));
       return true;
-    } else if (action.equals("incrementCounter")) {
-      this.incrementCounter(callbackContext, args.getString(0), args.getString(1));
-      return true;
+    //} else if (action.equals("incrementCounter")) {
+      //this.incrementCounter(callbackContext, args.getString(0), args.getString(1));
+      //return true;
     } else if (action.equals("stopTrace")) {
       this.stopTrace(callbackContext, args.getString(0));
       return true;
@@ -656,7 +656,7 @@ public class FirebasePlugin extends CordovaPlugin {
     });
   }
 
-  private void incrementCounter(final CallbackContext callbackContext, final String name, final String counterNamed) {
+ /* private void incrementCounter(final CallbackContext callbackContext, final String name, final String counterNamed) {
     Log.d(TAG, "incrementCounter called. name: " + name + " counterNamed: " + counterNamed);
     final FirebasePlugin self = this;
     cordova.getThreadPool().execute(new Runnable() {
@@ -680,7 +680,7 @@ public class FirebasePlugin extends CordovaPlugin {
         }
       }
     });
-  }
+  }*/
 
   private void stopTrace(final CallbackContext callbackContext, final String name) {
     Log.d(TAG, "stopTrace called. name: " + name);
