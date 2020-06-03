@@ -1,6 +1,6 @@
 package org.apache.cordova.firebase;
 
-import android.app.NotificationManager;
+//import android.app.NotificationManager;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -9,7 +9,7 @@ import android.net.Uri;
 //import androidx.annotation.NonNull;
 //import androidx.core.app.NotificationManagerCompat;
 import android.support.annotation.NonNull;
-import android.support.v4.app.NotificationManagerCompat;
+//import android.support.v4.app.NotificationManagerCompat;
 import android.text.TextUtils;
 import android.util.Base64;
 import android.util.Log;
@@ -18,7 +18,7 @@ import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.analytics.FirebaseAnalytics;
 import com.google.firebase.iid.FirebaseInstanceId;
-import com.google.firebase.messaging.FirebaseMessaging;
+//import com.google.firebase.messaging.FirebaseMessaging;
 import com.google.firebase.remoteconfig.FirebaseRemoteConfig;
 import com.google.firebase.remoteconfig.FirebaseRemoteConfigInfo;
 import com.google.firebase.remoteconfig.FirebaseRemoteConfigSettings;
@@ -123,9 +123,9 @@ public class FirebasePlugin extends CordovaPlugin {
     } else if (action.equals("unregister")) {
       this.unregister(callbackContext);
       return true;
-    } else if (action.equals("onNotificationOpen")) {
-      this.onNotificationOpen(callbackContext);
-      return true;
+    //} else if (action.equals("onNotificationOpen")) {
+     // this.onNotificationOpen(callbackContext);
+     // return true;
     } else if (action.equals("onTokenRefresh")) {
       this.onTokenRefresh(callbackContext);
       return true;
@@ -193,9 +193,9 @@ public class FirebasePlugin extends CordovaPlugin {
     } else if (action.equals("onDynamicLink")) {
       this.onDynamicLink(callbackContext);
       return true;
-    } else if (action.equals("clearAllNotifications")) {
-      this.clearAllNotifications(callbackContext);
-      return true;
+    //} else if (action.equals("clearAllNotifications")) {
+      //this.clearAllNotifications(callbackContext);
+      //return true;
   }
 
     return false;
@@ -210,7 +210,7 @@ public class FirebasePlugin extends CordovaPlugin {
   public void onResume(boolean multitasking) {
     FirebasePlugin.inBackground = false;
   }
-
+/*
   @Override
   public void onReset() {
     FirebasePlugin.notificationCallbackContext = null;
@@ -229,19 +229,19 @@ public class FirebasePlugin extends CordovaPlugin {
       FirebasePlugin.sendNotification(data, this.cordova.getActivity().getApplicationContext());
     }
   }
-
+*/
   public static boolean inBackground() {
     return FirebasePlugin.inBackground;
   }
 
-  public static boolean hasNotificationsCallback() {
+ /* public static boolean hasNotificationsCallback() {
     return FirebasePlugin.notificationCallbackContext != null;
-  }
+  }*/
 
   //
   // Cloud Messaging FCM
   //
-  public static void sendNotification(Bundle bundle, Context context) {
+  /*public static void sendNotification(Bundle bundle, Context context) {
     Log.d(TAG, "sendNotification called");
     if (!FirebasePlugin.hasNotificationsCallback()) {
       if (FirebasePlugin.notificationStack == null) {
@@ -527,7 +527,7 @@ public class FirebasePlugin extends CordovaPlugin {
         webView.loadUrl(method);
       }
     });
-  }
+  }*/
 
   // 
   // Analytics
