@@ -99,7 +99,7 @@ public class FirebasePlugin extends CordovaPlugin {
 
   @Override
   public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
-    if (action.equals("getId")) {
+    /*if (action.equals("getId")) {
       this.getId(callbackContext);
       return true;      
     } else if (action.equals("getToken")) {
@@ -129,7 +129,7 @@ public class FirebasePlugin extends CordovaPlugin {
     } else if (action.equals("onTokenRefresh")) {
       this.onTokenRefresh(callbackContext);
       return true;
-    } else if (action.equals("logEvent")) {
+    } else*/ if (action.equals("logEvent")) {
       this.logEvent(callbackContext, args.getString(0), args.getJSONObject(1));
       return true;
     } else if (action.equals("logError")) {
@@ -190,9 +190,9 @@ public class FirebasePlugin extends CordovaPlugin {
     } else if (action.equals("setAnalyticsCollectionEnabled")) {
       this.setAnalyticsCollectionEnabled(callbackContext, args.getBoolean(0));
       return true;
-    } else if (action.equals("onDynamicLink")) {
-      this.onDynamicLink(callbackContext);
-      return true;
+    //} else if (action.equals("onDynamicLink")) {
+     // this.onDynamicLink(callbackContext);
+     // return true;
     //} else if (action.equals("clearAllNotifications")) {
       //this.clearAllNotifications(callbackContext);
       //return true;
